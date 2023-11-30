@@ -29,12 +29,10 @@ void calculateTimes(struct Process processes[], int n, int turnaround[], int wai
         if (currentTime < processes[i].arrivalTime) {
             currentTime = processes[i].arrivalTime;
         }
-
         completionTime[i] = currentTime + processes[i].burstTime;
         turnaround[i] = completionTime[i] - processes[i].arrivalTime;
         waiting[i] = turnaround[i] - processes[i].burstTime;
         response[i] = waiting[i];
-
         currentTime = completionTime[i];
     }
 }
@@ -90,3 +88,5 @@ int main() {
 
     return 0;
 }
+
+// n = 5 2201233544
